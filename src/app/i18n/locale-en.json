@@ -103,9 +103,9 @@
     "RESCAN_DOC": "Remake music database entries for all files"
   },
   "PLUGINS": {
-    "BACK_TO_PLUGINS": "Back to Plugins",
-    "PLUGINS":"Plugins",
-    "PLUGINS_MANAGEMENT":"Plugins Management",
+    "BACK_TO_PLUGINS": "Back to Services",
+    "PLUGINS":"Services",
+    "PLUGINS_MANAGEMENT":"Services Management",
     "SHOW_DETAILS":"+ Show details",
     "HIDE_DETAILS":"- Hide details",
     "INSTALL":"Install",
@@ -114,9 +114,9 @@
     "DETAILS":"Details",
     "DROP":"Click and select a plugin or drop it here.",
     "INSTALL_PROGRESS":"Installation Progress",
-    "INSTALLED_PLUGINS":"Installed Plugins",
-    "SEARCH_PLUGINS":"Search Plugins",
-    "UPLOAD_PLUGINS":"Upload Plugin"
+    "INSTALLED_PLUGINS":"Installed Services",
+    "SEARCH_PLUGINS":"Search Services",
+    "UPLOAD_PLUGINS":"Upload Service"
   },
   "UPDATER": {
     "DOWNLOAD_SPEED": "Download Speed",
