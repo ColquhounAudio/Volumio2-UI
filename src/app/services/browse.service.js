@@ -217,7 +217,7 @@ class BrowseService {
     if (~albumart.indexOf('http')) {
       return albumart;
     } else {
-      return `${this.socketService.host}${albumart}`;
+      return `${location.origin}${albumart}`;
     }
   }
 
