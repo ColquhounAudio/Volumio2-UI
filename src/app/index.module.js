@@ -127,12 +127,13 @@ angular.module('volumio', [
   'LocalStorageModule',
   'cg.mailchimp',
   'cfp.loadingBar',
-
+  
   //Angular core modules
   // 'ngAnimate',
   // 'ngCookies',
   'ngTouch',
-  'ngSanitize'
+  'ngSanitize',
+  'ngRoute'
   ])
 
   //.constant('', toastr)

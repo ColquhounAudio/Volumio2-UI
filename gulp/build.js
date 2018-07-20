@@ -152,11 +152,13 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('credits', function (cb) {
+	/*
   exec('node src/app/themes/' + themeSelected + '/scripts/credits.js ' + themeSelected + ' ' + variantSelected, function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
   });
+  */
 })
 
 gulp.task('build-app', ['credits', 'fonts', 'fontawesome', 'other', 'static-pages', 'theme', 'replace-page-title']);

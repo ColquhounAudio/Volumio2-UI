@@ -4,6 +4,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
+var webpack_stream = require('webpack-stream');
 var conf = require('./conf');
 var gutil = require('gulp-util');
 var compareVersions = require('compare-versions');
@@ -21,9 +22,10 @@ if (compareVersions(process.versions.node, requiredNodeVersion) !== 0) {
 function webpack(watch, callback) {
   var webpackOptions = {
     watch: watch,
+    mode: 'development',
     module: {
-      preLoaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'jshint-loader'}],
-      loaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}]
+      rules: [{ test: /\.js$/, exclude: /node_modules/, loader: 'jshint-loader'},
+	      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}]
     },
     output: { filename: 'index.module.js' }
   };
@@ -50,7 +52,7 @@ function webpack(watch, callback) {
   };
 
   return gulp.src(path.join(conf.paths.src, '/app/index.module.js'))
-    .pipe($.webpack(webpackOptions, null, webpackChangeHandler))
+    .pipe(webpack_stream(webpackOptions, null, webpackChangeHandler))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
 }
 
