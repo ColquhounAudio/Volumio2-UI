@@ -1,0 +1,51 @@
+#pluginWrapper {
+  @include make-xs-column(24);
+  .pluginDescription{
+    margin-top: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  .sectionDescription{
+    margin-bottom: 28px;
+  }
+
+  .saveSectionBtn {
+    @extend .btn-info;
+  }
+  .control-label {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    @include make-sm-column(8);
+  }
+  .control-item {
+    @include make-sm-column(8);
+  }
+  .control-doc {
+    @include make-xs-column(1);
+    a {
+      font-size: 20px;
+      display: inline-block;
+      padding-top: 3px;
+    }
+  }
+  .control-description {
+    @include make-sm-column(8);
+    @include make-xs-column(21);
+    padding-top: 6px;
+  }
+  .control-buttons {
+    @include make-sm-column-offset(6);
+    @include make-sm-column(18);
+  }
+
+  @include breakpoint(xs) {
+    .panel-body {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}

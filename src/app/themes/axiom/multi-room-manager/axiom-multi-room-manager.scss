@@ -1,0 +1,92 @@
+#multiRoomManager {
+  @include make-xs-column(24);
+  .device {
+    @include make-row();
+    border-bottom: solid 1px #033656;
+    &.draggable {
+      cursor: grab;
+    }
+    &.hasClients {
+      cursor: pointer;
+    }
+  }
+  .device, .childDevice {
+    background: url('/app/themes/axiom/assets/graphics/table-item-background.png')  100% 100% repeat-x;
+    min-height: 50px;
+    padding: 10px 0;
+  }
+
+  .childDevice {
+    border-top: solid 1px #033656;
+  }
+
+  .deviceIcon {
+    @include make-xs-column(3);
+  }
+  .albumArt{
+    @include make-xs-column(3);
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .deviceDescription {
+    @include make-xs-column(8);
+    &.child {
+      @include make-sm-column(8);
+      @include make-xs-column(8);
+      text-align: right;
+    }
+    text-transform: uppercase;
+    .deviceName {
+      font-weight: bold;
+      font-size: 18px;
+      @include breakpoint(xs) {
+        font-size: 12px;
+      }
+    }
+    span {
+      color: $electric-blue;
+    }
+  }
+
+  .deviceVolume {
+    @include make-xs-column(12, 0);
+    @include make-sm-column(10, 0);
+    i {
+      width: 10%;
+      font-size: 24px;
+      color: $electric-blue;
+      margin-top: 4px;
+      vertical-align: middle;
+      &.fa-volume-off {
+        text-align: right;
+      }
+    }
+    > div {
+      width: 70%;
+      @include breakpoint(xs) {
+        width: 100%;
+      }
+      padding-left: 10px;
+      padding-right: 10px;
+      display: inline-block;
+    }
+  }
+
+  .removeDevice {
+    @include make-xs-column(2, 0);
+    @include make-sm-column(6);
+    text-align: right;
+  }
+
+  .slider {
+    margin-top: 4px;
+  }
+
+}
+
+.droppableleArea {
+  border: solid 0px red;
+  min-height: 20px;
+}

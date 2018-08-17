@@ -1,0 +1,10 @@
+<wait-backend-scrim></wait-backend-scrim>
+<div id="mainWrapper" class="container-fluid">
+    <header id="header" ui-view="header"></header>
+
+    <div id="contentWrapper" ng-class="state.current.url">
+      <div id="content" ng-class="state.current.url" ui-view="content"></div>
+    </div>
+
+    <footer id="footer" ui-view="footer"></footer>
+</div>

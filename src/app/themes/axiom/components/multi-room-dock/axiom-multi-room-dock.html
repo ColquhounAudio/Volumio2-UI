@@ -1,0 +1,32 @@
+<div class="row" >
+  <div id="multiRoomDockWrapper">
+    <div ng-repeat="device in multiRoomDock.multiRoomService.devices track by $index"
+        class="device"
+        ng-class="{'child': device.isChild}"
+        ng-click="multiRoomDock.changeDevice(device)">
+      <div
+          ng-class="{'isSelf': device.isSelf}"
+          class="dockDeviceWrapper">
+        <div class="deviceIcon">
+          <!-- <img ng-src="{{assetsUrl + '/graphics/device-icon-' + (device.child.length || 1) + '.png'}}"/> -->
+          <img
+              ng-if="device.state.albumart"
+              ng-src="{{device.state.albumart}}"
+              alt="{{device.name}}"/>
+        </div>
+        <div class="deviceDetails">
+          <div class="deviceName">
+            {{device.name}}
+          </div>
+          <div class="artist">
+            {{device.state.artist}}
+          </div>
+          <div class="track">
+            {{device.state.track}}
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

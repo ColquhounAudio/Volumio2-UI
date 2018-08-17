@@ -1,0 +1,95 @@
+#playQueue {
+  @include make-xs-column(24);
+  user-select: none;
+  cursor: pointer;
+
+  .title {
+    @include breakpoint('ltxs') {
+      display: none;
+    }
+  }
+
+  .trackInfoBarButtons {
+    float: right;
+    margin-top: 8px;
+    margin-right: 10px;
+    @include breakpoint('ltxs') {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  #playQueueList {
+    @include make-row();
+    ul {
+      margin-bottom: 0px;
+      padding: 0;
+    }
+    li {
+      background: url('/app/themes/axiom/assets/graphics/table-item-background.png') bottom left repeat-x;
+      margin: 0px;
+      list-style: none;
+      padding: 14px 0px;
+      &:hover {
+        background-color: rgba($electric-blue, .3);
+      }
+      &:hover span.rollover, &.isPlaying span.rollover{
+        background: rgba(0, 0, 0, .3);
+        -webkit-transition: .3s;
+        &:before {
+          content: '\f04b';
+        }
+      }
+      &.sorting span.rollover{
+        transform: rotate(90deg);
+        &:before {
+          content: '\f0ec' !important;
+        }
+      }
+      &.isPlaying span.rollover {
+        color: $electric-blue;
+      }
+    }
+
+    span.rollover {
+      font-family: FontAwesome;
+      font-size: 20px;
+      padding-top: 10px;
+      padding-left: 15px;
+      left: 25px;
+      -webkit-transition: .3s;
+      background: rgba(0, 0, 0, 0);
+      cursor: pointer;
+      height: 45px;
+      width: 45px;
+      position: absolute;
+    }
+
+    .image {
+      display: table-cell;
+      img {
+        width: 45px;
+        height: 45px;
+        margin: 0 10px 0 10px;
+      }
+    }
+
+    .titleArtist {
+      display: table-cell;
+      vertical-align: top;
+      width: 100%;
+    }
+
+    .commandButtons {
+      display: table-cell;
+      vertical-align: middle;
+      margin-right: 5px;
+      i {
+        color: white;
+        &:hover {
+          color: $electric-blue;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+#navButtons {
+  @include make-sm-column(6, 0);
+  @include make-xs-column(10, 0);
+  padding-top: 8px;
+  button {
+    font-size: 22px;
+  }
+}
+
+#searchBox {
+  @include make-sm-column(10, 0);
+  @include make-sm-column-offset(8);
+  @include make-xs-column(14, 0);
+  padding-right: 10px;
+  margin-top: 2px;
+}
+
+#browseTableSources {
+  td {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 14px 0px 14px 30px;
+    &:hover {
+      color: $electric-blue;
+    }
+  }
+}
+
+#browseTablesWrapper {
+  overflow-y: auto;
+  @include make-row();
+}
+
+.rowTitle {
+  clear: both;
+  font-size: 18px;
+  padding: 15px 10px 5px 10px;
+  cursor: auto;
+  color: $electric-blue;
+  border-bottom: solid 1px $electric-blue;
+  background-color: $brand-secondary;
+  i {
+    margin-right: 10px;
+  }
+}
+
+.browseTable {
+  .itemWrapper {
+    cursor: pointer;
+  }
+
+  .itemTab {
+    overflow: visible;
+    height: 56px;
+    border-bottom: solid 1px $electric-blue;
+    padding: 5px 0px 0px 5px;
+    // background-color: $background-color;
+    &:hover {
+      background-color: $electric-blue-light;
+    }
+  }
+
+  .image {
+    float: left;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    i {
+      padding-top: 15px;
+      font-size: 18px
+    }
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .description {
+    width: auto;
+    overflow: hidden;
+  }
+
+  .title {
+    font-size: 16px;
+    height: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.onlyTitle {
+      margin: 10px 0;
+    }
+  }
+
+  .artist-album {
+    font-size: 13px;
+    color: $electric-blue;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &.onlyTitle {
+      display: none;
+    }
+  }
+
+  .commandButtons {
+    float: right;
+    padding-top: 8px;
+    width: 35px;
+    font-size: 20px;
+    i {
+      color: white;
+      &:hover {
+        color: $electric-blue;
+      }
+    }
+    .dropdown-menu {
+      left: auto;
+      right: 10px;
+      visibility: hidden;
+      &.right {
+        left: 0;
+        right: auto;
+      }
+      &.top {
+        top: auto;
+        bottom: 25px;
+      }
+    }
+  }
+
+  //Grid view override
+  .listWrapper {
+    &.grid {
+      .itemWrapper {
+          position: relative;
+          @include make-xs-column(12, 0);
+          @include make-sm-column(6, 0);
+          @include make-md-column(4, 0);
+          @include make-lg-column(4, 0);
+      }
+
+      .itemTab {
+        position: relative;
+        height: auto;
+        padding: 10px;
+        border: solid 1px $electric-blue;
+        margin: 10px;
+      }
+
+      .image {
+        border: solid 1px #444;
+        position: relative;
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+        &:before{
+          content: "";
+          display: block;
+          padding-top: 100%;
+        }
+        i {
+          display: block;
+          position: absolute;
+          padding: 0px;
+          width: 60px;
+          height: 50px;
+          margin: 0px auto;
+          font-size: 50px;
+          top: calc(50% - 25px);
+          left: calc(50% - 30px);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+      }
+
+      .title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &.onlyTitle {
+          white-space: normal;
+          margin: 0;
+          height: 42px;
+        }
+      }
+
+      .artist-album {
+        &.onlyTitle {
+          // display: block;
+        }
+      }
+
+      .description {
+        float: none;
+      }
+
+      .commandButtons {
+        float: none;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  //End grid overrides
+}

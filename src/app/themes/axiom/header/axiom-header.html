@@ -1,0 +1,25 @@
+<header>
+  <div class="row">
+    <div class="col-sm-8 col-xs-4">
+      <div id="logo">
+        <img
+            ng-src="{{variantAssetsUrl + '/logos/' + variant + '-logo' +
+              ((header.matchmediaService.isPhone) ? '-mobile' : '' ) + '.png'}}"
+            alt="Axiom air"
+            ui-sref="volumio.playback"/>
+      </div>
+    </div>
+    <div class="col-sm-8 col-xs-16">
+      <player-buttons></player-buttons>
+    </div>
+  </div>
+
+  <div class="row">
+    <!--<div class="col-xs-offset-3 col-xs-16">-->
+      <volume-manager type="slider"></volume-manager>
+   <!--</div>-->
+  </div>
+  <div id="sideMenuWrapper">
+    <side-menu></side-menu>
+  </div>
+</header>

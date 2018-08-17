@@ -1,0 +1,20 @@
+#trackManager{
+  margin: 20px;
+
+  .trackManagerSlider {
+    position: relative;
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}
+#trackButtonBar {
+  margin-top: 10px;
+  text-align: center;
+  button {
+    @extend .btn-link;
+    &.active {
+      color: #FFF;
+    }
+  }
+}

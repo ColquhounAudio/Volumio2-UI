@@ -1,0 +1,36 @@
+<div id="trackManager">
+  <div class="row">
+    <div ng-if="trackManager.playerService.state.trackType !== 'webradio'">
+      <div
+        class="col-sm-22 col-xs-20 trackManagerSlider"
+        ng-class="{disabled: trackManager.playerService.state.disableUi}">
+        <slider
+            ng-model="trackManager.playerService.seekPercent"
+            id=""
+            min="0"
+            step="1"
+            max="1000"
+            slider-tooltip="hide">
+        </slider>
+      </div>
+      <div class="col-sm-2 col-xs-4">
+        {{trackManager.playerService.elapsedTimeString}}
+      </div>
+    </div>
+
+    <div ng-if="trackManager.playerService.state.trackType === 'webradio'">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped active"
+            role="progressbar"
+            aria-valuenow="45"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="width: 100%">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="trackButtonBar"
+      ng-include src="'app/components/track-manager/elements/track-manager-button-bar.html'">
+  </div>
+</div>

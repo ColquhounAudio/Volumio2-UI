@@ -1,0 +1,489 @@
+@import "./assets/variants/load-variant";
+
+
+$link-hover-decoration: none;
+
+$panel-bg: transparent;
+$panel-default-heading-bg: $panel-bg;
+$panel-border-radius: 0;
+
+$grid-columns: 24;
+$grid-gutter-width:30px;
+
+$btn-border-radius-base: 0;
+$btn-info-color: $electric-blue;
+$btn-info-bg: $brand-secondary;
+$btn-info-border: $electric-blue;
+
+//used for cancel buttons
+$btn-warning-color: $electric-blue;
+$btn-warning-bg: #000;
+$btn-warning-border: darken($electric-blue, 15%);
+
+$btn-danger-color: darken(red, 15%);
+$btn-danger-bg: $brand-secondary;
+$btn-danger-border: darken(red, 15%);
+
+$modal-content-bg: #1f4c7f;
+
+$list-group-bg: #013363;
+$list-group-border: $electric-blue;
+$list-group-border-radius: 0;
+
+$input-bg: $background-color;
+$input-color: $electric-blue;
+$input-border: $electric-blue;
+
+$progress-bg: #000;
+$progress-bar-bg: $electric-blue;
+
+//Input group
+$input-group-addon-bg: #000;
+$input-group-addon-border-color: $electric-blue;
+
+//Alerts
+$alert-info-bg: $background-color;
+$alert-info-text: $text-color;
+$alert-info-border: $electric-blue;
+
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+// Reset and dependencies
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/normalize";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/print";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/glyphicons";
+
+// Core CSS
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/code";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/grid";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tables";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/forms";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
+
+// Components
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/component-animations";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/dropdowns";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/input-groups";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navs";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/breadcrumbs";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/pagination";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/pager";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/labels";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/badges";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/jumbotron";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/thumbnails";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/alerts";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/progress-bars";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/media";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/list-group";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/panels";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-embed";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/wells";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/close";
+
+// Components w/ JavaScript
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/modals";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/carousel";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/popovers";
+
+// Utility classes
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/utilities";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-utilities";
+
+body, html {
+  height: 100vh;
+  background: #000;
+}
+
+#mainWrapper {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  background: url(/app/themes/axiom/assets/variants/#{$variant}/graphics/background-top.png) top no-repeat;
+}
+
+#contentWrapper {
+  @include make-xs-column(24);
+  position: fixed;
+  z-index: 1;
+  left: 0px;
+  right: 0px;
+  top: $headerHeight;
+  bottom: $footerHeight;
+  padding-top: 20px;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+//Buttons
+button {
+  @extend .btn, .btn-primary;
+  outline: none !important;
+  &.btn-link {
+    @extend .btn-link;
+    background: none !important;
+    border: none !important;
+    &:hover {
+    }
+    &:focus {
+      color: $link-color;
+    }
+    &:focus, &:active {
+      color: $link-color;
+    }
+    &.active {
+      color: $link-hover-color;
+    }
+    font-size: 22px;
+    padding: 2px 12px;
+  }
+  &.btn-info {
+    @extend .btn-info;
+    &:focus {
+      background-color: $btn-info-bg;
+      border-color: $btn-info-color;
+    }
+    &.selected {
+      background-color: transparent;
+    }
+  }
+}
+
+.box {
+  background-image: url(/app/themes/axiom/assets/variants/#{$variant}/graphics/panel-background.png);
+  background-size:100% 100%;
+  box-shadow: $box-shadow-color;
+  @include make-xs-column(24);
+  .boxHeader{
+    @include make-row();
+    background: $box-header-gradient;
+    .title {
+      // @include make-sm-column(16);
+      float: left;
+      h2 {
+        float: left;
+        font-size:20px;
+        color: $accentColor;
+        text-transform: uppercase;
+        padding:15px 0 15px 15px;
+        margin:0;
+      }
+    }
+    .buttons {
+      @include make-xs-column(6, 0);
+      text-align: right;
+      padding-top: 10px;
+      padding-right:7px;
+    }
+  }
+
+  .boxTable{
+    @include make-row();
+  }
+  table {
+    @include make-xs-column(24);
+    font-size: 16px;
+    margin: 0;
+    tr {
+      cursor: pointer;
+      th {
+        border: none;
+        border-bottom: solid 1px $electric-blue;
+        color: #EEE;
+        background: $brand-secondary;
+      }
+    }
+    td {
+      background: url(/app/themes/axiom/assets/variants/#{$variant}/graphics/table-item-background.png) bottom left repeat-x;
+      border: none !important;
+      padding:10px !important;
+      vertical-align: middle !important;
+      &.image {
+        font-size:30px;
+        text-align: center;
+        width: 90px;
+        img {
+          margin-left: 10px;
+          margin-right: 10px;
+          @include square(70px);
+        }
+      }
+      &.commandButtons {
+        width: 50px;
+        text-align: right;
+        padding-right:6px;
+      }
+      .title {
+        color: $accentColor;
+      }
+    }
+    .hamburgerMenu{
+      position: relative;
+      .buttonsGroup{
+        position: absolute;
+        top: 34px;
+        right: 0;
+        left: auto;
+        z-index: 3;
+        &.last {
+          top: auto;
+          bottom: 38px;
+        }
+      }
+    }
+  }
+}
+
+//Inputs
+input {
+  padding: 6px 12px !important;
+  width: 100%;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  outline: none !important;
+  &:focus {
+    background-color: #042F44 !important;
+  }
+}
+
+// Input icon
+.form-control-feedback {
+  text-align: left;
+}
+
+//Modals
+.modal-title {
+  color: $electric-blue;
+}
+.modal-header {
+  border-bottom: solid 1px $electric-blue;
+}
+.modal-footer {
+  border-top: solid 1px $electric-blue;
+}
+.modal-content {
+  background-color: $modal-background-color;
+}
+
+//panels
+.panel {
+  border: none;
+  margin-top: 20px;
+  .panel-heading {
+    padding-left: 0px;
+    border-bottom: solid 1px $electric-blue;
+    .panel-title {
+      color: #FFF;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+//progress
+.progress {
+  height: 18px;
+}
+.progress-bar.active, .progress.active .progress-bar, .progress-bar.active{
+  animation-direction: reverse !important;
+}
+
+//Toggle
+.ui-select-toggle, .ui-select-container, .ui-select-match {
+  background-color: transparent;
+  border-color: $electric-blue;
+  color: $electric-blue;
+  .btn-default:hover {
+    background-color: $brand-secondary;
+    border-color: $electric-blue;
+    color: $electric-blue;
+  }
+  .ui-select-choices {
+    background-color: #DDD;
+  }
+}
+.bootstrap-switch {
+  border-color: $electric-blue;
+  .bootstrap-switch-label {
+    background-color: #06111D;
+    color: $electric-blue;
+  }
+}
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+  background-color: $brand-secondary;
+  color: $electric-blue;
+}
+
+//Slider
+.slider-track {
+  border: solid 1px #555;
+  background-image: $slider-track-background;
+}
+.slider-selection {
+  background-image: $slider-selection-background;
+}
+.slider-handle {
+  background-image: $slider-handle-background;
+  border: $slider-handle-border;
+}
+.slider-tick, .slider-tick.in-selection {
+  background-image: $slider-tick-background;
+  border: $slider-tick-border;
+}
+.disabled {
+  .slider-track {
+    border: $slider-track-background-disabled;
+    background-image: $slider-track-border-disabled;
+  }
+  .slider-selection {
+    background-image: $slider-selection-background-disabled;
+  }
+  .slider-handle {
+    background-image: $slider-handle-background-disabled;
+    border: $slider-handle-border-disabled;
+  }
+}
+
+div.equalizer.horizontal{
+  .slider-selection {
+    background-image: $slider-selection-background;
+  }
+  .slider-track {
+    background-image: $slider-track-background;
+  }
+}
+div.equalizer.vertical{
+  .slider-selection {
+    background-image: $slider-track-background;
+  }
+  .slider-track {
+    background-image: $slider-selection-background;
+  }
+}
+
+//Dropdown menu
+ul {
+  &.dropdown-menu {
+    width: 180px;
+    background-color: $background-color;
+    border: solid 1px $electric-blue;
+    i {
+      width: 24px;
+      text-align: center;
+      padding-right: 4px;
+    }
+    a {
+      display: block;
+      color: #FFF;
+      padding: 4px 0px 4px 6px;
+      &:hover {
+        color: $electric-blue;
+      }
+    }
+  }
+}
+
+//Upload droppable area
+.uploadDroppableArea {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 40px 0px;
+  border: dotted 1px grey;
+  cursor: pointer;
+  &.dragover {
+    border: dotted 1px #54C698;
+  }
+}
+
+
+//Toast messages
+.toast-success {
+  background-color: $brand-secondary;
+}
+
+
+//Scrollbars
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: darken($brand-secondary, 3%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: darken($brand-primary, 8%);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+//Alerts
+.alert {
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+//Input group
+.input-group-addon {
+  &.clickable {
+    cursor: pointer;
+  }
+}
+
+//Checkboxes
+span {
+  &.checkbox-wrapper {
+    position: relative;
+  }
+}
+
+.custom-checkbox {
+	display: none;
+  & + label {
+    cursor: pointer;
+  	background-color: $brand-primary;
+  	border: 1px solid $electric-blue;
+  	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  	padding: 9px;
+  	display: inline-block;
+  	position: absolute;;
+    left: -28px;
+    top: 1px;
+  }
+
+  &:checked + label {
+  	background-color: $electric-blue;
+  	border: 1px solid $brand-primary;
+  	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+  	color: $electric-blue;
+  }
+
+  &:checked + label:after {
+  	content: '\2714';
+  	font-size: 14px;
+  	position: absolute;
+  	top: 0px;
+  	left: 3px;
+  	color: $brand-primary;
+  }
+}

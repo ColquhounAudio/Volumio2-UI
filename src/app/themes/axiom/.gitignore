@@ -1,0 +1,3 @@
+load-variant.scss
+src/app/themes/axiom/assets/variants/*
+!src/app/themes/axiom/assets/variants/axiom/*

@@ -1,0 +1,9 @@
+#playerButtons {
+  margin-top: 8px;
+  text-align: center;
+  button {
+    @extend .btn-info;
+    margin: 0px 5px;
+    font-size: 18px;
+  }
+}

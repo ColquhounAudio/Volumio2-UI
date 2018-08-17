@@ -1,0 +1,21 @@
+.modal-body {
+  &.sleep {
+    h4 {
+      margin-bottom: 5px;
+      color: $electric-blue;
+    }
+  }
+
+  .ui-select-bootstrap .ui-select-toggle {
+    background-color: $btn-warning-bg;
+  }
+
+  .row{
+    &.alarm {
+      border-bottom: solid 1px $electric-blue;
+    }
+    &.alarm:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
