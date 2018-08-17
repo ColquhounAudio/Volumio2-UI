@@ -1,0 +1,14 @@
+{
+  "app": "axiom",
+  "pageTitle": "Axiom Air - Wireless HiFi Speaker",
+  "sideMenu": {
+    "checkboxes": {
+        "analogInput": true,
+        "bluetooth": true
+      }
+  },
+  "plugins": {
+    "showDoc": false,
+    "showDescription": false
+  }
+}
