@@ -44,6 +44,13 @@ class SideMenuController {
       method: 'DASwitchPress'
     });
   }
+  toggleOpticalInput() {
+    this.socketService.emit('callMethod', {
+      endpoint: 'system_controller/gpios',
+      method: 'OpticalSwitchPress'
+    });
+  }
+
 
   toggleBluetooth() {
     this.socketService.emit('callMethod', {
@@ -104,6 +111,7 @@ class SideMenuController {
         this.playerService.state.service, (val) => {
       if (val) {
         this.analogIn = this.playerService.state.service === 'analogin';
+        this.opticalIn = this.playerService.state.service === 'opticalin';
         this.bluetooth = this.playerService.state.service === 'bluetoth';
       }
     });

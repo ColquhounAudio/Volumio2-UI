@@ -32,6 +32,14 @@
     </div>
 
     <div class="hardwareToggleCheckbox"
+        ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.checkboxes.opticalInput">
+      <input type="checkbox"
+          ng-model="sideMenu.opticalIn"
+          ng-click="sideMenu.toggleOpticalInput()">
+        <span translate="SIDEMENU.OPTICAL_INPUT"></span>
+    </div>
+
+    <div class="hardwareToggleCheckbox"
         ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.checkboxes.bluetooth">
       <input type="checkbox"
           ng-model="sideMenu.bluetooth"

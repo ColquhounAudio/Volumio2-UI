@@ -328,7 +328,7 @@ class PlayerService {
       this.$log.debug('pushState', data);
       this.state = data;
 
-      this.state.disableUi = this.state.disableUiControls || this.state.service === 'analogin';
+      this.state.disableUi = this.state.disableUiControls || this.state.service === 'analogin' || this.state.service === 'opticalin';
 
       this.elapsedTime = this.state.seek;
       if (this.state.status === 'play') {
