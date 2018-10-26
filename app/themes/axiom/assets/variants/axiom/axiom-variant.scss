@@ -1,0 +1,49 @@
+// $fonts-path: "/app/themes/assets/variants/axiom/fonts";
+$theme-primary-color:#00AEEF;
+$fb-color:#00AEEF;
+$twitter-color:#00AEEF;
+$accentColor: #00AEEF;
+$brand-primary: #2965A8;
+$brand-secondary: #05344B;
+$electric-blue: #069FD7;
+$electric-blue-light: rgba($electric-blue, .4);
+$text-color: #FFF;
+$link-hover-color: #FFF;
+$background-color: #040911;
+$modal-background-color: #0A2645;
+
+$headerHeight: 85px;
+$footerHeight: 50px;
+
+$box-header-gradient: linear-gradient(to right, #001932 0%,#033a5a 100%);
+$box-shadow-color: 0 0 30px rgba($electric-blue, 0.75);
+
+$side-menu-background: linear-gradient(to bottom, #054253 0%, #054253 50%, rgba(5, 66, 83, 0.6) 100%);
+
+// Sliders
+$slider-track-background: linear-gradient(to top, #222 0%, #222 100%);
+$slider-selection-background: linear-gradient(to bottom, $accentColor 0%, $accentColor 100%);
+$slider-handle-background: linear-gradient(to bottom, $accentColor 0%, darken($accentColor, 20%) 100%);
+$slider-handle-border: solid 1px darken($accentColor, 10%);
+$slider-tick-background: linear-gradient(to bottom, #222  0%, #222  100%);
+$slider-tick-border: solid 1px #555;
+
+$slider-track-background-disabled: $slider-track-background;
+$slider-track-border-disabled: $slider-tick-border;
+$slider-selection-background-disabled: linear-gradient(to bottom, #444 0%, #555 100%);
+$slider-handle-background-disabled: linear-gradient(to bottom, #555 0%, #666 100%);
+$slider-handle-border-disabled: solid 1px darken(#333, 10%);
+
+
+// CSS EXPOSED FOR JS READ
+#cssExposer {
+
+}
+
+.toast-success {}
+
+.toast-info {}
+
+.toast-error {}
+
+.toast-warning {}
