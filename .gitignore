@@ -13,6 +13,7 @@ src/app/themes/
 src/app/themes/volumio/assets/variants/
 !src/app/themes/volumio/assets/variants/volumio/*
 !src/app/themes/axiom/assets/variants/axiom/*
+!src/app/themes/axiom/assets/variants/bryston/*
 load-variant.scss
 .DS_Store
 src/app/volumio.constant.js
