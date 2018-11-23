@@ -25,35 +25,31 @@
 
     <div class="hardwareToggleCheckbox"
         ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.checkboxes.internalInput">
-      <input type="radio" name="srcSelect"
+      <input type="button" name="srcSelect" value="INTERNAL" style="background:steelblue;"
           ng-model="sideMenu.InternalIn"
           ng-click="sideMenu.toggleInternalInput()">
-        <span translate="SIDEMENU.INTERNAL_INPUT"></span>
     </div>
 
 
     <div class="hardwareToggleCheckbox"
         ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.checkboxes.analogInput">
-      <input type="radio" name="srcSelect"
+      <input type="button" name="srcSelect" value="ANALOG" style="background:steelblue;"
           ng-model="sideMenu.analogIn"
           ng-click="sideMenu.toggleAnalogInput()">
-        <span translate="SIDEMENU.ANALOG_INPUT"></span>
     </div>
 
     <div class="hardwareToggleCheckbox"
         ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.checkboxes.opticalInput">
-      <input type="radio" name="srcSelect"
+      <input type="button" name="srcSelect" value="OPTICAL" style="background:steelblue;"
           ng-model="sideMenu.opticalIn"
           ng-click="sideMenu.toggleOpticalInput()">
-        <span translate="SIDEMENU.OPTICAL_INPUT"></span>
     </div>
 
     <div class="hardwareToggleCheckbox"
         ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.checkboxes.bluetooth">
-      <input type="radio" name="srcSelect"
+      <input type="button" name="srcSelect" value="BLUETOOTH" style="background:steelblue;"
           ng-model="sideMenu.bluetooth"
           ng-click="sideMenu.toggleBluetooth()">
-        <span translate="SIDEMENU.BLUETOOTH"></span>
     </div>
 
     <div class="side-logo" ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.showLogo">

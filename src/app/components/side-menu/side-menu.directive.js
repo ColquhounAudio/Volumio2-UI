@@ -38,24 +38,33 @@ class SideMenuController {
     });
   }
 
-  toggleAnalogInput() {
+  toggleInternalInput() {
     this.socketService.emit('callMethod', {
-      endpoint: 'system_controller/gpios',
-      method: 'DASwitchPress'
+      endpoint: 'system_controller/gpio-buttons',
+      method: 'setInternal'
     });
   }
+
+
+  toggleAnalogInput() {
+    this.socketService.emit('callMethod', {
+      endpoint: 'system_controller/gpio-buttons',
+      method: 'setAnalog'
+    });
+  }
+
   toggleOpticalInput() {
     this.socketService.emit('callMethod', {
-      endpoint: 'system_controller/gpios',
-      method: 'OpticalSwitchPress'
+      endpoint: 'system_controller/gpio-buttons',
+      method: 'setOptical'
     });
   }
 
 
   toggleBluetooth() {
     this.socketService.emit('callMethod', {
-      endpoint: 'audio_interface/bluetooth',
-      method: 'BTpress'
+      endpoint: 'system_controller/gpio-buttons',
+      method: 'setBluetooth'
     });
   }
 
