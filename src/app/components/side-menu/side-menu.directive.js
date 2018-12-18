@@ -61,13 +61,6 @@ class SideMenuController {
   }
 
 
-  toggleBluetooth() {
-    this.socketService.emit('callMethod', {
-      endpoint: 'system_controller/gpio-buttons',
-      method: 'setBluetooth'
-    });
-  }
-
   toggleMenu() {
     this.visible = !this.visible;
   }
