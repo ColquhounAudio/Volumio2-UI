@@ -45,13 +45,6 @@
           ng-click="sideMenu.toggleOpticalInput()">
     </div>
 
-    <div class="hardwareToggleCheckbox"
-        ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.checkboxes.bluetooth">
-      <input type="button" name="srcSelect" value="BLUETOOTH" style="background:steelblue;"
-          ng-model="sideMenu.bluetooth"
-          ng-click="sideMenu.toggleBluetooth()">
-    </div>
-
     <div class="side-logo" ng-if="::sideMenu.uiSettingsService.uiSettings.sideMenu.showLogo">
       <img
         ng-src="{{variantAssetsUrl}}/graphics/{{variant}}-logo-sidebar.png"

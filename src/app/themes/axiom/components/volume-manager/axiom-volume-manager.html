@@ -8,20 +8,20 @@
           class="btn-link hidden-xs"
           ng-click="volumeManager.playerService.toggleMute()"
           ng-class="{active: volumeManager.playerService.state.mute}"
-          ng-disabled="volumeManager.playerService.state.disableUi">
+          >
           <i class="fa fa-volume-off"></i>
       </button>
       <button
           class="btn-link"
           ng-click="volumeManager.playerService.volumeDown()"
-          ng-disabled="volumeManager.playerService.state.disableUi">
+          >
         <i class="fa fa-volume-down"></i>
       </button>
     </div>
 
     <div
         class="volumeSlider"
-        ng-class="{disabled: volumeManager.playerService.state.disableUi}">
+        >
       <slider
           ng-model="volumeManager.volume"
           min="0"
@@ -35,7 +35,7 @@
       <button
           class="btn-link"
           ng-click="volumeManager.playerService.volumeUp()"
-          ng-disabled="volumeManager.playerService.state.disableUi">
+          >
         <i class="fa fa-volume-up"></i>
       </button>
     </div>
