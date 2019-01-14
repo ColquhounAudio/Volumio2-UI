@@ -127,7 +127,7 @@ function routerConfig ($stateProvider, $urlRouterProvider, $locationProvider, th
       url: 'multi-room',
       views: {
         'content@volumio': {
-          templateUrl: 'app/themes/axiom/multi-room-manager/axiom-multi-room-manager.html',
+          templateUrl: 'app/themes/bryfi/multi-room-manager/bryfi-multi-room-manager.html',
           controller: 'MultiRoomManagerController',
           controllerAs: 'multiRoomManager'
         }

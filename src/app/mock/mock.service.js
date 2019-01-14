@@ -655,7 +655,7 @@ class MockService {
       ],
       multiRoomDevices: [
         {
-          name: 'AxiomAir4',
+          name: 'BryFi4',
           ip: 'http://192.168.1.159:3000',
           isSelf: true,
           state: {
@@ -666,7 +666,7 @@ class MockService {
           }
         },
         {
-          name: 'AxiomAir6',
+          name: 'BryFi6',
           ip: 'http://192.168.1.129:3000',
           state: {
             volume: 0,
@@ -676,7 +676,7 @@ class MockService {
           }
         },
         {
-          name: 'AxiomAir6',
+          name: 'BryFi6',
           ip: 'http://192.168.1.129:3000',
           state: {
             volume: 0,
@@ -689,7 +689,7 @@ class MockService {
           type: 'GROUP',
           name: 'Kitchen',
           server: {
-            name: 'AxiomAir',
+            name: 'BryFi',
             ip: 'http://192.168.1.111:3000',
             state: {
               volume: 50,
