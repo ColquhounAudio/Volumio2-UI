@@ -50,17 +50,8 @@
             </div>
 
             <div class="deviceVolume">
-              <i class="fa fa-volume-off hidden-xs"></i>
+              <i ng-if="!device.server" class="fa fa-volume-off hidden-xs"></i>
               <div>
-                <slider
-                    ng-if="device.server"
-                    ng-model="device.server.groupvolume"
-                    ng-change="multiRoomManager.changeGroupVolume(device.server.ip, device.server.groupvolume)"
-                    min="0"
-                    step="1"
-                    max="100"
-                    slider-tooltip="hide">
-                </slider>
                 <slider
                     ng-if="!device.server"
                     ng-model="device.volume"
@@ -71,7 +62,7 @@
                     slider-tooltip="hide">
                 </slider>
               </div>
-              <i class="fa fa-volume-up hidden-xs"></i>
+              <i ng-if="!device.server" class="fa fa-volume-up hidden-xs"></i>
             </div>
             <div class="clearfix"></div>
           </div>
