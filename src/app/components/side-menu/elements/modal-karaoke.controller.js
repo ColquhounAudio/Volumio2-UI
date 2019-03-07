@@ -16,7 +16,7 @@ class ModalKaraokeController {
 
   karaokeSwitch() {
     let emitPayload = {
-      'endpoint': 'system_controller/gpios',
+      'endpoint': 'system_controller/gpio-buttons',
       'method': 'KaraokeSwitchPress',
       'data': 'off'
     };
@@ -28,7 +28,7 @@ class ModalKaraokeController {
 
   musicVolumePlus() {
     let emitPayload = {
-      'endpoint': 'system_controller/gpios',
+      'endpoint': 'system_controller/gpio-buttons',
       'method': 'MusicPlusPress',
       'data': ''
     };
@@ -37,7 +37,7 @@ class ModalKaraokeController {
 
   musicVolumeMinus() {
     let emitPayload = {
-      'endpoint': 'system_controller/gpios',
+      'endpoint': 'system_controller/gpio-buttons',
       'method': 'MusicMinusPress',
       'data': ''
     };
@@ -46,7 +46,7 @@ class ModalKaraokeController {
 
   micVolumePlus() {
     let emitPayload = {
-      'endpoint': 'system_controller/gpios',
+      'endpoint': 'system_controller/gpio-buttons',
       'method': 'MicPlusPress',
       'data': ''
     };
@@ -55,7 +55,7 @@ class ModalKaraokeController {
 
   micVolumeMinus() {
     let emitPayload = {
-      'endpoint': 'system_controller/gpios',
+      'endpoint': 'system_controller/gpio-buttons',
       'method': 'MicMinusPress',
       'data': ''
     };
@@ -80,7 +80,7 @@ class ModalKaraokeController {
 
   initService() {
     this.socketService.emit('callMethod', {
-      'endpoint': 'system_controller/gpios',
+      'endpoint': 'system_controller/gpio-buttons',
       'method': 'getKaraokeStatus',
       'data': ''
     });
