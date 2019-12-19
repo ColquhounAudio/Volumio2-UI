@@ -4,7 +4,7 @@
 <div class="modal-body">
   <h4>Karaoke function will work only with Karaoke Hardware.</h4>
   <div class="row karaoke">
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <h4>KARAOKE MODE</h4>
       <input
           bs-switch
@@ -18,7 +18,7 @@
           ng-true-value="true"
           ng-false-value="false">
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <h4>MUSIC VOLUME</h4>
       <button
           class="btn btn-info"
@@ -29,7 +29,7 @@
           ng-click="modal.musicVolumePlus()">+
       </button>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <h4>MIC VOLUME</h4>
       <button
           class="btn btn-info"
@@ -40,6 +40,45 @@
           ng-click="modal.micVolumePlus()">+
       </button>
     </div>
+    <div class="col-sm-6" ng-show="avr">
+      <h4>ECHO VOLUME</h4>
+      <button
+          class="btn btn-info"
+          ng-click="modal.echoVolumeMinus()">-
+      </button>
+      <button
+          class="btn btn-info"
+          ng-click="modal.echoVolumePlus()">+
+      </button>
+    </div>
+  </div>
+  <div ng-show="avr">
+  <h4>Level Controls</h4>
+  <div class="row karaoke">
+    <div class="col-sm-2">
+	  Music
+    </div>
+    <div class="col-sm-10">
+	  <input ng-model="modal.musicLevel" ng-click="modal.musicLevelChange()" type="range" class="custom-range" min="0" max="255" id="musicLevel">
+    </div>
+
+  </div>
+  <div class="row karaoke">
+    <div class="col-sm-2">
+	  Mic
+    </div>
+    <div class="col-sm-10">
+	  <input ng-model="modal.micLevel" ng-click="modal.micLevelChange()" type="range" class="custom-range" min="0" max="255" id="micLevel">
+    </div>
+  </div>
+  <div class="row karaoke">
+    <div class="col-sm-2">
+	  Echo
+    </div>
+    <div class="col-sm-10">
+	  <input ng-model="modal.echoLevel" ng-click="modal.echoLevelChange()" type="range" class="custom-range" min="0" max="255" id="echoLevel">
+    </div>
+  </div>
   </div>
 </div>
 <div class="modal-footer">

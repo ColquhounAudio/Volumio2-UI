@@ -1,12 +1,16 @@
 class ModalKaraokeController {
-  constructor($uibModalInstance, socketService, dataObj, $log) {
+  constructor($scope, $uibModalInstance, socketService, dataObj, $log) {
     'ngInject';
     this.$uibModalInstance = $uibModalInstance;
     this.socketService = socketService;
     this.dataObj = dataObj;
     this.karaokeEnabled = false;
+    this.musicLevel = 128;
+    this.micLevel = 128;
+    this.echoLevel = 128;
+    this.$scope = $scope;
+    this.$scope.avr = false;
     this.$log = $log;
-
     this.init();
   }
 
@@ -61,6 +65,52 @@ class ModalKaraokeController {
     };
     this.socketService.emit('callMethod', emitPayload);
   }
+  
+  echoVolumePlus() {
+    let emitPayload = {
+      'endpoint': 'system_controller/gpio-buttons',
+      'method': 'EchoPlusPress',
+      'data': ''
+    };
+    this.socketService.emit('callMethod', emitPayload);
+  }
+
+  echoVolumeMinus() {
+    let emitPayload = {
+      'endpoint': 'system_controller/gpio-buttons',
+      'method': 'EchoMinusPress',
+      'data': ''
+    };
+    this.socketService.emit('callMethod', emitPayload);
+  }
+
+  musicLevelChange() {
+    let emitPayload = {
+      'endpoint': 'system_controller/gpio-buttons',
+      'method': 'MusicLevelChange',
+      'data': this.musicLevel
+    };
+    this.socketService.emit('callMethod', emitPayload);
+  }
+  micLevelChange() {
+    let emitPayload = {
+      'endpoint': 'system_controller/gpio-buttons',
+      'method': 'MicLevelChange',
+      'data': this.micLevel
+    };
+    this.socketService.emit('callMethod', emitPayload);
+  }
+  echoLevelChange() {
+    let emitPayload = {
+      'endpoint': 'system_controller/gpio-buttons',
+      'method': 'EchoLevelChange',
+      'data': this.echoLevel
+    };
+    this.socketService.emit('callMethod', emitPayload);
+  }
+
+
+
 
   cancel() {
     this.$uibModalInstance.dismiss('cancel');
@@ -76,6 +126,17 @@ class ModalKaraokeController {
       this.$log.debug('pushKaraokeStatus', data);
       this.karaokeEnabled = data === 'off' ? false : true;
     });
+
+    this.socketService.on('pushKaraokeLevels', (data) => {
+      this.$log.debug('pushKaraokeLevels', data);
+      this.musicLevel = data.musicLevel;
+      this.micLevel = data.micLevel;
+      this.echoLevel = data.echoLevel;
+      this.$scope.avr = !data.legacy;
+    });
+
+
+
   }
 
   initService() {
@@ -84,6 +145,12 @@ class ModalKaraokeController {
       'method': 'getKaraokeStatus',
       'data': ''
     });
+    this.socketService.emit('callMethod', {
+      'endpoint': 'system_controller/gpio-buttons',
+      'method': 'getKaraokeLevels',
+      'data': ''
+    });
+
   }
 }
 
