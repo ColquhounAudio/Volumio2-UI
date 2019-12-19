@@ -133,6 +133,11 @@ class ModalKaraokeController {
       this.micLevel = data.micLevel;
       this.echoLevel = data.echoLevel;
       this.$scope.avr = !data.legacy;
+      if(data.KaraokeStatus==1){
+	    this.karaokeEnabled = true;
+      }else{
+	    this.karaokeEnabled = false;
+      }
     });
 
 
