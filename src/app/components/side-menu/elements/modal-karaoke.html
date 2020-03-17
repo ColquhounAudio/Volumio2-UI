@@ -59,7 +59,7 @@
 	  Music
     </div>
     <div class="col-sm-10">
-	  <input ng-model="modal.musicLevel" ng-click="modal.musicLevelChange()" type="range" class="custom-range" min="0" max="255" id="musicLevel">
+	    <input ng-model="modal.musicLevel" ng-input-range ng-change="modal.musicLevelChange()" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 500 } }" type="range" class="custom-range" min="0" max="255" id="musicLevel">
     </div>
 
   </div>
@@ -68,7 +68,7 @@
 	  Mic
     </div>
     <div class="col-sm-10">
-	  <input ng-model="modal.micLevel" ng-click="modal.micLevelChange()" type="range" class="custom-range" min="0" max="255" id="micLevel">
+	  <input ng-model="modal.micLevel" ng-input-range ng-change="modal.micLevelChange()" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 500 } }" type="range" class="custom-range" min="0" max="255" id="micLevel">
     </div>
   </div>
   <div class="row karaoke">
@@ -76,7 +76,7 @@
 	  Echo
     </div>
     <div class="col-sm-10">
-	  <input ng-model="modal.echoLevel" ng-click="modal.echoLevelChange()" type="range" class="custom-range" min="0" max="255" id="echoLevel">
+	  <input ng-model="modal.echoLevel" ng-input-range ng-change="modal.echoLevelChange()" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 500 } }" type="range" class="custom-range" min="0" max="255" id="echoLevel">
     </div>
   </div>
   </div>
@@ -88,3 +88,15 @@
     Exit
   </button>
 </div>
+<script>
+function onMusicVolumeChange(value)
+{
+	console.log("Music Volume changed to: "+value);
+	{{modal.musicLevelChange()}}
+}
+function onMusicVolumeInput(value)
+{
+	console.log("Music Volume input to: "+value);
+}
+
+</script>

@@ -128,16 +128,22 @@ class ModalKaraokeController {
     });
 
     this.socketService.on('pushKaraokeLevels', (data) => {
-      this.$log.debug('pushKaraokeLevels', data);
-      this.musicLevel = data.musicLevel;
-      this.micLevel = data.micLevel;
-      this.echoLevel = data.echoLevel;
-      this.$scope.avr = !data.legacy;
-      if(data.KaraokeStatus==1){
-	    this.karaokeEnabled = true;
-      }else{
-	    this.karaokeEnabled = false;
-      }
+	    this.$log.debug('pushKaraokeLevels', data);
+	    if(
+		    this.musicLevel !== data.musicLevel ||
+		    this.micLevel !== data.micLevel ||
+		    this.echoLevel !== data.echoLevel
+	    ){
+		    this.musicLevel = data.musicLevel;
+		    this.micLevel = data.micLevel;
+		    this.echoLevel = data.echoLevel;
+	    }
+	    this.$scope.avr = !data.legacy;
+	    if(data.KaraokeStatus===1){
+		    this.karaokeEnabled = true;
+	    }else{
+		    this.karaokeEnabled = false;
+	    }
     });
 
 
